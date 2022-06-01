@@ -1,7 +1,11 @@
 <form #loginForm="ngForm" (ngSubmit)="LoginUser(loginForm.value)">
-  <input type="text"  name="user_name" placeholder="Enter user name" ngModel>
-  <br><br>
-  <input type="password" name="password" placeholder="Enter password"  ngModel>
-  <br><br>
-  <button>Submit Data</button>
+  <input type="text" required #user_name="ngModel"  pattern="[a-zA-Z]+$"  name="user_name" placeholder="Enter user name" ngModel>
+  <br>
+  <span *ngIf="user_name.invalid && user_name.touched">Please Enter valid input</span>
+  <br>
+  <input type="password" required minlength="8" #password="ngModel" name="password" placeholder="Enter password"  ngModel>
+  <br>
+  <span *ngIf="password.invalid && password.touched ">please enter password</span>
+  <br>
+  <button [disabled]="loginForm.invalid">Submit Data</button>
 </form>
