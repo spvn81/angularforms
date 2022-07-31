@@ -1,0 +1,7 @@
+.footer{
+background-color: aqua;
+position: absolute;
+width: 99%;
+bottom: 0;
+border-radius: 10px;
+}

@@ -1,11 +1,69 @@
-<form [formGroup]="LoginForm" (ngSubmit)="LoginUser()">
+<!-- <form [formGroup]="LoginForm" (ngSubmit)="LoginUser()">
   <input type="text"  name="user_name" placeholder="Enter user name" formControlName="user" >
   <br>
+  <span *ngIf="userInvalid && userInvalid.invalid && userInvalid.touched">Enter valid input</span>
 
+  <br>
   <br>
   <input type="password" placeholder="Enter password" formControlName="password">
   <br>
-
+<span *ngIf="PasswordInvalid && PasswordInvalid.invalid && PasswordInvalid.touched">password Invalid</span>
   <br>
   <button>Submit Data</button>
-</form>
+</form> -->
+
+
+<!-- ng directives -->
+
+<!-- <h1 appGreenEl>test el</h1> -->
+
+<ul>
+  <li ><a href="">home</a></li>
+  <li ><a href="about">about</a></li>
+  <li ><a href="login">login</a></li>
+  <li ><a href="user">User</a></li>
+
+</ul>
+<style>
+  table,th,td{
+    border: 1px solid black;
+  }
+</style>
+
+<table >
+<tr>
+  <th>name</th>
+  <th>email</th>
+  <th>mobile</th>
+  <th>action</th>
+</tr>
+
+<tr>
+  <td>sai</td>
+  <td>email@gmail.com</td>
+  <td>00000000</td>
+  <td><a href="">Edit</a>|| <a href="">Delete</a></td>
+</tr>
+
+<tr>
+  <td>pavan</td>
+  <td>pavan@gmail.com</td>
+  <td>123456789</td>
+  <td><a href="">Edit</a></td>
+</tr>
+
+
+</table>
+
+
+<a href="user/1">sai</a><br>
+<a href="user/2">pavan</a><br>
+<a href="user/3">kumar</a><br>
+<a href="user/4">manoj</a><br>
+
+<ul>
+  <li *ngFor="let data of membersData">{{data.email}}</li>
+</ul>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
