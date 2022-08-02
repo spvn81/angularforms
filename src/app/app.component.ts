@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,FormControlName,Validators} from '@angular/forms';
+import {UserDataService} from './services/user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,12 @@ return this.LoginForm.get('user')
 
 get PasswordInvalid(){
 return this.LoginForm.get('password')
+}
+users:any;
+constructor(private userDta:UserDataService){
+
+this.users  = userDta.users()
+
 }
 
 }
